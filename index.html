@@ -357,6 +357,45 @@
   color: #666;
 }
 
+.leadership {
+  padding: 60px 20px;
+  background: #f9f9f9;
+  text-align: center;
+}
+
+.leadership h2 {
+  margin-bottom: 40px;
+  color: #0b5f5a;
+}
+
+.leaders {
+  display: flex;
+  justify-content: center;
+  gap: 40px;
+  flex-wrap: wrap;
+}
+
+.leader-card {
+  max-width: 250px;
+}
+
+.leader-card img {
+  width: 100%;
+  height: 280px;
+  object-fit: cover;
+  border-radius: 10px;
+}
+
+.leader-card h3 {
+  margin-top: 15px;
+  font-size: 1.1rem;
+}
+
+.leader-card p {
+  color: #555;
+  font-size: 0.95rem;
+}
+
 @media (max-width: 768px) {
 
   /* Gallery container */
@@ -396,7 +435,78 @@
     text-align: center;
   }
 }
-    
+
+/* Video Gallery */
+.video-slider {
+  position: relative;
+  max-width: 600px;
+  margin: 40px auto 15px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.video-frame {
+  width: 100%;
+  max-width: 600px;
+  aspect-ratio: 9 / 16; /* Perfect for phone videos */
+  background: #000;
+  border-radius: 12px;
+  overflow: hidden;
+  position: relative;
+}
+
+.gallery-video {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  display: none;
+}
+
+.gallery-video.active {
+  display: block;
+}
+
+.video-nav {
+  background: var(--primary-color);
+  color: white;
+  border: none;
+  font-size: 22px;
+  padding: 12px 16px;
+  border-radius: 50%;
+  cursor: pointer;
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 10;
+}
+
+.video-nav.left {
+  left: -55px;
+}
+
+.video-nav.right {
+  right: -55px;
+}
+
+.video-caption {
+  text-align: center;
+  font-size: 15px;
+  color: #555;
+  margin-top: 10px;
+}
+
+/* Mobile fix */
+@media (max-width: 600px) {
+  .video-nav.left {
+    left: 10px;
+  }
+  .video-nav.right {
+    right: 10px;
+  }
+}
+
+
   </style>
 </head>
 
@@ -426,8 +536,28 @@
 <section id="about">
   <h2>About Us</h2>
   <p>
-    Southpaw Society Ghana is an advocacy and community-based organization dedicated to empowering left-handed individuals and challenging the stigma they face in society. We work to promote awareness, inclusion, and acceptance through education, engagement, and advocacy.
+    Southpaw Society Ghana is a registered non-governmental organization, duly licensed by the Department of Social Welfare of Ghana, and committed to empowering marginalized individuals while building inclusive, sustainable communities across the nation. The organization is led by Linda Nmonkua Bumor, President of Southpaw Society Ghana, together with Frank Fiadufe Ablorde, Co-Founder.
+Together, they are spearheading a transformative social movement focused on advocacy, capacity building, and practical interventions that restore dignity, unlock potential, and promote social justice. Through strategic programs, partnerships, and grassroots engagement, Southpaw Society Ghana equips individuals and communities to thrive, contribute meaningfully to society, and drive long-term positive change.
+Rooted in compassion, equity, and service, Southpaw Society Ghana exists as a catalyst for hope, resilience, and sustainable development.
   </p>
+</section>
+
+<section class="leadership">
+  <h2>Our Leadership</h2>
+
+  <div class="leaders">
+    <div class="leader-card">
+      <img src="images/linda.jpg" alt="Linda Nmonkua Bumor">
+      <h3>Linda Nmonkua Bumor</h3>
+      <p>President, Southpaw Society Ghana</p>
+    </div>
+
+    <div class="leader-card">
+      <img src="images/frank.jpg" alt="Frank Fiadufe Ablorde">
+      <h3>Frank Fiadufe Ablorde</h3>
+      <p>Co-Founder, Southpaw Society Ghana</p>
+    </div>
+  </div>
 </section>
 
 <section id="mission">
@@ -502,6 +632,33 @@
   </div>
 </section>
 
+<section id="videos">
+  <h2>Video Highlights</h2>
+
+  <div class="video-slider">
+    <button class="video-nav left" onclick="prevVideo()">&#10094;</button>
+
+    <div class="video-frame">
+      <video class="gallery-video active" controls>
+        <source src="images/video1.mp4" type="video/mp4">
+        Your browser does not support the video tag.
+      </video>
+
+      <video class="gallery-video active" controls>
+        <source src="images/video3.mp4" type="video/mp4">
+      </video>
+    </div>
+
+    <button class="video-nav right" onclick="nextVideo()">&#10095;</button>
+  </div>
+
+  <p class="video-caption" id="videoCaption">
+    School Workshop – Left-handed awareness session
+  </p>
+</section>
+
+
+
 <footer>
   <div class="footer-content">
     <h3>Southpaw Society Ghana</h3>
@@ -509,9 +666,10 @@
     
     <div class="socials">
       <a href="https://www.instagram.com/southpawsocietyghana?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw==" target=_blank>Instagram</a>
-      <a href="#">Facebook</a>
+      <a href="https://www.facebook.com/profile.php?id=61571130084951" target="_blank">Facebook</a>
       <a href="#">X (Twitter)</a>
-      <a href="https://wa.me/" target="_blank">WhatsApp Us</a>
+      <a href="https://api.whatsapp.com/send/?phone=233545809619&text=Hello,&type=phone_number&app_absent=0" target="_blank">WhatsApp Us</a>
+      <a href="https://www.linkedin.com/in/southpaw-society-ghana-117325343?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=ios_app" target="_blank">Linkedin</a>
     </div>
     <p style="font-size: 12px; margin-top: 30px; color: #666; "> &copy; 2024 Southpaw Society Ghana LBG. All rights reserved.</p>
   </div>
@@ -536,7 +694,30 @@
       caption: "Meet the Team"
     },
 
+    {
+      src: "images/gallery5.jpg",
+      caption: "School Workshop"
+    },
 
+    {
+      src: "images/gallery6.jpg",
+      caption: "School Workshop"
+    },
+
+    {
+      src: "images/gallery7.jpg",
+      caption: "School Workshop"
+    },
+
+    {
+      src: "images/gallery8.jpg",
+      caption: "Community Engagement"
+    },
+
+    {
+      src: "images/gallery9.jpg",
+      caption: "Community Engagement"
+    },
   ];
 
   let currentIndex = 0;
@@ -560,5 +741,38 @@
   }
 </script>
 
+<script>
+  let currentVideo = 0;
+  const videos = document.querySelectorAll(".gallery-video");
+  const captions = [
+    "Community Outreach Engagement",
+    "School Workshop – Left-handed awareness session",
+    ""
+  ];
+  const captionEl = document.getElementById("videoCaption");
+
+  function showVideo(index) {
+    videos.forEach(video => {
+      video.pause();
+      video.currentTime = 0;
+      video.classList.remove("active");
+    });
+
+    videos[index].classList.add("active");
+    captionEl.textContent = captions[index];
+  }
+
+  function nextVideo() {
+    currentVideo = (currentVideo + 1) % videos.length;
+    showVideo(currentVideo);
+  }
+
+  function prevVideo() {
+    currentVideo = (currentVideo - 1 + videos.length) % videos.length;
+    showVideo(currentVideo);
+  }
+</script>
+
 </body>
 </html>
+
