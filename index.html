@@ -357,6 +357,46 @@
   color: #666;
 }
 
+@media (max-width: 768px) {
+
+  /* Gallery container */
+  .gallery-container {
+    max-width: 100%;
+    padding: 0 10px;
+  }
+
+  /* Image wrapper */
+  .gallery-image {
+    height: 70vh;
+  }
+
+  .gallery-image img {
+    object-fit: contain;
+  }
+
+  /* Navigation buttons */
+  .gallery-btn {
+    width: 40px;
+    height: 40px;
+    font-size: 18px;
+  }
+
+  .gallery-btn.prev {
+    left: 10px;
+  }
+
+  .gallery-btn.next {
+    right: 10px;
+  }
+
+  /* Caption */
+  .gallery-caption {
+    font-size: 0.95rem;
+    padding: 10px 8px;
+    text-align: center;
+  }
+}
+    
   </style>
 </head>
 
