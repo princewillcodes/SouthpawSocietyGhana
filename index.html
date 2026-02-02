@@ -506,6 +506,68 @@
   }
 }
 
+.contact-buttons {
+  margin-top: 25px;
+  display: flex;
+  justify-content: center;
+  gap: 15px;
+  flex-wrap: wrap;
+}
+
+.contact-btn {
+  padding: 12px 22px;
+  border-radius: 50px;
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 14px;
+  transition: transform 0.2s, background 0.2s;
+  color: #fff;
+  display: inline-block;
+}
+
+.contact-btn.call {
+  background-color: var(--primary-color);
+}
+
+.contact-btn.email {
+  background-color: var(--secondary-color);
+}
+
+.contact-btn:hover {
+  transform: translateY(-2px);
+  opacity: 0.9;
+}
+
+.socials.buttons {
+  margin-top: 20px;
+  display: flex;
+  justify-content: center;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+
+.social-btn {
+  padding: 10px 18px;
+  border-radius: 50px;
+  text-decoration: none;
+  font-size: 13px;
+  font-weight: 600;
+  color: #fff;
+  transition: transform 0.2s, opacity 0.2s;
+  display: inline-block;
+}
+
+/* Brand colors (subtle, not loud) */
+.social-btn.instagram { background: #e1306c; }
+.social-btn.facebook  { background: #1877f2; }
+.social-btn.tiktok    { background: #000000; }
+.social-btn.whatsapp  { background: #25d366; }
+.social-btn.linkedin  { background: #0a66c2; }
+
+.social-btn:hover {
+  transform: translateY(-2px);
+  opacity: 0.9;
+}
 
   </style>
 </head>
@@ -543,7 +605,7 @@ Rooted in compassion, equity, and service, Southpaw Society Ghana exists as a ca
 </section>
 
 <section class="leadership">
-  <h2>Our Leadership</h2>
+  <h2>Our Team</h2>
 
   <div class="leaders">
     <div class="leader-card">
@@ -557,6 +619,19 @@ Rooted in compassion, equity, and service, Southpaw Society Ghana exists as a ca
       <h3>Frank Fiadufe Ablorde</h3>
       <p>Co-Founder, Southpaw Society Ghana</p>
     </div>
+    
+    <div class="leader-card">
+      <img src="images/Mabel.jpg" alt="Mabel Mensah">
+      <h3>Mabel Mensah</h3>
+      <p>Public Relations Officer, Southpaw Society Ghana</p>
+    </div>
+
+    <div class="leader-card">
+      <img src="images/Emmanuel.jpg" alt="Emmanuel Quansah">
+      <h3>Emmanuel Quansah</h3>
+      <p>Graphic Designer/Social Media Manager</p>
+    </div>
+
   </div>
 </section>
 
@@ -647,6 +722,10 @@ Rooted in compassion, equity, and service, Southpaw Society Ghana exists as a ca
       <video class="gallery-video active" controls>
         <source src="images/video3.mp4" type="video/mp4">
       </video>
+
+      <video class="gallery-video active" controls>
+        <source src="images/video2.mp4" type="video/mp4">
+      </video>
     </div>
 
     <button class="video-nav right" onclick="nextVideo()">&#10095;</button>
@@ -658,21 +737,37 @@ Rooted in compassion, equity, and service, Southpaw Society Ghana exists as a ca
 </section>
 
 
-
 <footer>
   <div class="footer-content">
     <h3>Southpaw Society Ghana</h3>
     <p>Non-Profit Organization, Ghana</p>
     
-    <div class="socials">
-      <a href="https://www.instagram.com/southpawsocietyghana?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw==" target=_blank>Instagram</a>
-      <a href="https://www.facebook.com/profile.php?id=61571130084951" target="_blank">Facebook</a>
-      <a href="#">X (Twitter)</a>
-      <a href="https://api.whatsapp.com/send/?phone=233545809619&text=Hello,&type=phone_number&app_absent=0" target="_blank">WhatsApp Us</a>
-      <a href="https://www.linkedin.com/in/southpaw-society-ghana-117325343?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=ios_app" target="_blank">Linkedin</a>
-    </div>
+    <div class="socials buttons">
+  <a href="https://www.instagram.com/southpawsocietyghana?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw==" target="_blank" class="social-btn instagram">Instagram</a>
+
+  <a href="https://www.facebook.com/profile.php?id=61571130084951" target="_blank" class="social-btn facebook">Facebook</a>
+
+  <a href="https://www.tiktok.com/@southpaw.society?is_from_webapp=1&sender_device=pc" target="_blank" class="social-btn tiktok">TikTok</a>
+
+  <a href="https://api.whatsapp.com/send/?phone=233545809619&text=Hello,&type=phone_number&app_absent=0" target="_blank" class="social-btn whatsapp">WhatsApp</a>
+
+  <a href="https://www.linkedin.com/in/southpaw-society-ghana-117325343?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=ios_app" target="_blank" class="social-btn linkedin">LinkedIn</a>
+</div>
+  
+  <div class="contact-buttons">
+  <a href="tel:+233545809619" class="contact-btn call">
+    📞 Call Us
+  </a>
+
+  <a href="mailto:southpawsocietyghana@gmail.com" class="contact-btn email">
+    ✉️ Email Us
+  </a>
+  </div>
+  
+
     <p style="font-size: 12px; margin-top: 30px; color: #666; "> &copy; 2024 Southpaw Society Ghana LBG. All rights reserved.</p>
   </div>
+
 </footer>
 
 <script>
@@ -747,7 +842,7 @@ Rooted in compassion, equity, and service, Southpaw Society Ghana exists as a ca
   const captions = [
     "Community Outreach Engagement",
     "School Workshop – Left-handed awareness session",
-    ""
+    "Celebration of World Lefties Day"
   ];
   const captionEl = document.getElementById("videoCaption");
 
@@ -775,4 +870,5 @@ Rooted in compassion, equity, and service, Southpaw Society Ghana exists as a ca
 
 </body>
 </html>
+
 
