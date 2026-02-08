@@ -6,594 +6,27 @@
   <meta name="description" content="Empowering left-handed individuals and challenging stigma in Ghana.">
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+ <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
 
-  <style>
-    :root {
-      --primary-color: #006d77;
-      --secondary-color: #e29578;
-      --light-bg: #edf6f9;
-      --dark-text: #2d3436;
-      --white: #ffffff;
-    }
-
-    html {
-      scroll-behavior: smooth;
-    }
-
-    body {
-      margin: 0;
-      font-family: 'Poppins', sans-serif;
-      line-height: 1.6;
-      color: var(--dark-text);
-      background-color: var(--white);
-    }
-
-    /* Header & Nav */
-    header {
-      background: var(--primary-color);
-      color: var(--white);
-      padding: 15px 0;
-      position: sticky;
-      top: 0;
-      z-index: 1000;
-      box-shadow: 0 2px 5px rgba(0,0,0,0.1);
-    }
-
-    nav {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      max-width: 1000px;
-      margin: auto;
-      padding: 0 20px;
-    }
-
-    .logo {
-      font-size: 18px;
-      font-weight: 700;
-      letter-spacing: 1px;
-    }
-
-    nav div {
-      display: flex;
-      gap: 20px;
-    }
-
-    nav a {
-      color: var(--white);
-      text-decoration: none;
-      font-size: 14px;
-      font-weight: 500;
-      transition: color 0.3s;
-    }
-
-    nav a:hover {
-      color: var(--secondary-color);
-    }
-
-    /* Sections General */
-    section {
-      padding: 80px 20px;
-      max-width: 900px;
-      margin: auto;
-    }
-
-    h2 {
-      color: var(--primary-color);
-      margin-bottom: 20px;
-      font-size: 28px;
-      position: relative;
-      display: inline-block;
-    }
-    
-    /* Underline effect for H2 */
-    h2::after {
-      content: '';
-      display: block;
-      width: 50px;
-      height: 3px;
-      background: var(--secondary-color);
-      margin-top: 5px;
-    }
-
-    /* Hero Section */
-    .hero {
-      text-align: center;
-      background: linear-gradient(135deg, var(--light-bg) 0%, #8cc0de 100%);
-      padding: 100px 20px;
-      max-width: 100%;
-    }
-
-  .hero-logo {
-    width: 350px;
-    height: 140px;
-    border-radius: 50%;
-    object-fit: cover;
-    background: #3194ba;
-    padding: 1px;
-    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.12);
-    margin-bottom: 20px;
-    }
-
-    .hero h1 {
-      font-size: 42px;
-      color: var(--primary-color);
-      margin-bottom: 15px;
-      line-height: 1.2;
-    }
-
-    .hero p {
-      font-size: 20px;
-      max-width: 700px;
-      margin: 0 auto 30px auto;
-      color: #555;
-    }
-
-    .cta-button {
-      background-color: var(--primary-color);
-      color: white;
-      padding: 12px 25px;
-      text-decoration: none;
-      border-radius: 50px;
-      font-weight: 600;
-      transition: transform 0.2s, background 0.2s;
-      display: inline-block;
-    }
-
-    .cta-button:hover {
-      background-color: #004d55;
-      transform: translateY(-2px);
-    }
-
-
-    /* Mission & Vision Cards */
-    .mission-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-      gap: 30px;
-      margin-top: 30px;
-    }
-
-    .card {
-      background: var(--light-bg);
-      padding: 25px;
-      border-radius: 8px;
-      border-left: 5px solid var(--secondary-color);
-    }
-
-    .card h3 {
-      margin-top: 0;
-      color: var(--primary-color);
-    }
-
-    /* Objectives List */
-    .objectives ul {
-      list-style: none;
-      padding: 0;
-    }
-
-    .objectives li {
-      background: #f9f9f9;
-      margin-bottom: 10px;
-      padding: 15px;
-      border-radius: 5px;
-      border-left: 4px solid var(--primary-color);
-      box-shadow: 0 2px 4px rgba(0,0,0,0.05);
-    }
-
-    /* Gallery */
-    .gallery-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-      gap: 20px;
-    }
-
-    .gallery-item {
-      background-color: #ddd;
-      height: 200px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      color: #777;
-      font-weight: 600;
-      border-radius: 8px;
-      overflow: hidden;
-      position: relative;
-    }
-    
-    .gallery-item:hover {
-      background-color: #ccc;
-    }
-
-    /* Footer */
-    footer {
-      background: #222;
-      color: #fff;
-      text-align: center;
-      padding: 40px 20px;
-      margin-top: 50px;
-    }
-
-    .footer-content h3 {
-      margin-top: 0;
-      color: var(--secondary-color);
-    }
-
-    .socials {
-      margin-top: 20px;
-    }
-
-    .socials a {
-      color: #ccc;
-      margin: 0 12px;
-      text-decoration: none;
-      font-size: 15px;
-      transition: color 0.3s;
-      cursor: pointer;
-    }
-
-    .socials a:hover {
-      color: var(--secondary-color);
-    }
-
-    /* Mobile Responsiveness */
-    @media (max-width: 600px) {
-      nav {
-        flex-direction: column;
-        padding-bottom: 10px;
-      }
-      nav div {
-        margin-top: 15px;
-        flex-wrap: wrap;
-        justify-content: center;
-      }
-      .hero h1 { font-size: 32px; }
-      .hero p { font-size: 16px; }
-    }
-
-    .logo img {
-  height: 42px;
-  width: auto;
-}
-
-.hero-logo {
-  max-width: 130px;
-  margin-bottom: 25px;
-}
-
-.slideshow {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 20px;
-  margin-top: 40px;
-}
-
-.slide {
-  text-align: center;
-  max-width: 600px;
-  min-height: 420px;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-}
-
-.slide img {
-  width: 100%;
-  height: 500px;
-  object-fit: cover;
-  border-radius: 8px;
-}
-
-.slide p {
-  margin-top: 10px;
-  font-weight: 500;
-  color: #555;
-}
-
-.slide-btn {
-  background: var(--primary-color);
-  color: white;
-  border: none;
-  font-size: 24px;
-  padding: 10px 15px;
-  cursor: pointer;
-  border-radius: 50%;
-  transition: background 0.3s;
-}
-
-.slide-btn:hover {
-  background: #004d55;
-}
-
-.events-section {
-  padding: 60px 20px;
-  background: #f9f9f9;
-  text-align: center;
-}
-
-.events-section h2 {
-  margin-bottom: 40px;
-}
-
-.events-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-  gap: 30px;
-  max-width: 1100px;
-  margin: 0 auto;
-}
-
-.event-card {
-  background: #ffffff;
-  border-radius: 8px;
-  overflow: hidden;
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.08);
-}
-
-/* THIS is the key fix */
-.event-image {
-  width: 100%;
-  aspect-ratio: 4 / 5;
-  overflow: hidden;
-  background: #eee;
-}
-
-.event-image img {
-  width: 100%;
-  height: 100%;
-  object-fit: contain;
-}
-
-.event-caption {
-  padding: 14px 12px;
-}
-
-.event-caption h3 {
-  font-size: 1rem;
-  margin-bottom: 6px;
-}
-
-.event-caption p {
-  margin: 0;
-  font-size: 0.9rem;
-  font-weight: 500;
-}
-
-.event-caption span {
-  display: block;
-  margin-top: 4px;
-  font-size: 0.85rem;
-  color: #666;
-}
-
-.leadership {
-  padding: 60px 20px;
-  background: #f9f9f9;
-  text-align: center;
-}
-
-.leadership h2 {
-  margin-bottom: 40px;
-  color: #0b5f5a;
-}
-
-.leaders {
-  display: flex;
-  justify-content: center;
-  gap: 40px;
-  flex-wrap: wrap;
-}
-
-.leader-card {
-  max-width: 250px;
-}
-
-.leader-card img {
-  width: 100%;
-  height: 280px;
-  object-fit: cover;
-  border-radius: 10px;
-}
-
-.leader-card h3 {
-  margin-top: 15px;
-  font-size: 1.1rem;
-}
-
-.leader-card p {
-  color: #555;
-  font-size: 0.95rem;
-}
-
-@media (max-width: 768px) {
-
-  /* Gallery container */
-  .gallery-container {
-    max-width: 100%;
-    padding: 0 10px;
-  }
-
-  /* Image wrapper */
-  .gallery-image {
-    height: 70vh;
-  }
-
-  .gallery-image img {
-    object-fit: contain;
-  }
-
-  /* Navigation buttons */
-  .gallery-btn {
-    width: 40px;
-    height: 40px;
-    font-size: 18px;
-  }
-
-  .gallery-btn.prev {
-    left: 10px;
-  }
-
-  .gallery-btn.next {
-    right: 10px;
-  }
-
-  /* Caption */
-  .gallery-caption {
-    font-size: 0.95rem;
-    padding: 10px 8px;
-    text-align: center;
-  }
-}
-
-/* Video Gallery */
-.video-slider {
-  position: relative;
-  max-width: 600px;
-  margin: 40px auto 15px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-.video-frame {
-  width: 100%;
-  max-width: 600px;
-  aspect-ratio: 9 / 16; 
-  background: #000;
-  border-radius: 12px;
-  overflow: hidden;
-  position: relative;
-}
-
-.gallery-video {
-  width: 100%;
-  height: 100%;
-  object-fit: contain;
-  display: none;
-}
-
-.gallery-video.active {
-  display: block;
-}
-
-.video-nav {
-  background: var(--primary-color);
-  color: white;
-  border: none;
-  font-size: 22px;
-  padding: 12px 16px;
-  border-radius: 50%;
-  cursor: pointer;
-  position: absolute;
-  top: 50%;
-  transform: translateY(-50%);
-  z-index: 10;
-}
-
-.video-nav.left {
-  left: -55px;
-}
-
-.video-nav.right {
-  right: -55px;
-}
-
-.video-caption {
-  text-align: center;
-  font-size: 15px;
-  color: #555;
-  margin-top: 10px;
-}
-
-/* Mobile fix */
-@media (max-width: 600px) {
-  .video-nav.left {
-    left: 10px;
-  }
-  .video-nav.right {
-    right: 10px;
-  }
-}
-
-.contact-buttons {
-  margin-top: 25px;
-  display: flex;
-  justify-content: center;
-  gap: 15px;
-  flex-wrap: wrap;
-}
-
-.contact-btn {
-  padding: 12px 22px;
-  border-radius: 50px;
-  text-decoration: none;
-  font-weight: 600;
-  font-size: 14px;
-  transition: transform 0.2s, background 0.2s;
-  color: #fff;
-  display: inline-block;
-}
-
-.contact-btn.call {
-  background-color: var(--primary-color);
-}
-
-.contact-btn.email {
-  background-color: var(--secondary-color);
-}
-
-.contact-btn:hover {
-  transform: translateY(-2px);
-  opacity: 0.9;
-}
-
-.socials.buttons {
-  margin-top: 20px;
-  display: flex;
-  justify-content: center;
-  gap: 12px;
-  flex-wrap: wrap;
-}
-
-.social-btn {
-  padding: 10px 18px;
-  border-radius: 50px;
-  text-decoration: none;
-  font-size: 13px;
-  font-weight: 600;
-  color: #fff;
-  transition: transform 0.2s, opacity 0.2s;
-  display: inline-block;
-}
-
-.social-btn.instagram { background: #e1306c; }
-.social-btn.facebook  { background: #1877f2; }
-.social-btn.tiktok    { background: #000000; }
-.social-btn.whatsapp  { background: #25d366; }
-.social-btn.linkedin  { background: #0a66c2; }
-
-.social-btn:hover {
-  transform: translateY(-2px);
-  opacity: 0.9;
-}
-
-  </style>
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="icon" href="favicon.png" type="image/png">
 </head>
 
 <body>
 
-<header>
+<header id="top">
   <nav>
-   <div> <a class="logo" href="#top">Southpaw Society Ghana</a> </div>
-    <div>
-      <a href="#about">About</a>
-      <a href="#mission">Mission</a>
-      <a href="#objectives">Objectives</a>
-      <a href="#events">Upcoming Events</a>
-      <a href="#volunteer">Voluteer</a>
-      <a href="#gallery">Gallery</a>
+    <a class="logo"  href="#top">Southpaw Society Ghana</a>
+
+    <div class="hamburger" onclick="toggleMenu()">☰</div>
+
+    <div class="nav-links" id="navLinks">
+      <a href="#about" onclick="toggleMenu()">About</a>
+      <a href="#mission" onclick="toggleMenu()">Mission</a>
+      <a href="#objectives" onclick="toggleMenu()">Objectives</a>
+      <a href="#events" onclick="toggleMenu()">Upcoming Events</a>
+      <a href="#volunteer" onclick="toggleMenu()">Volunteer</a>
+      <a href="#gallery" onclick="toggleMenu()">Gallery</a>
     </div>
   </nav>
 </header>
@@ -608,7 +41,7 @@
 <section id="about">
   <h2>About Us</h2>
   <p>
-    Southpaw Society Ghana is a registered non-governmental organization, duly licensed by the Department of Social Welfare of Ghana, and committed to empowering marginalized individuals while building inclusive, sustainable communities across the nation. The organization is led by Linda Nmonkua Bumor, President of Southpaw Society Ghana, together with Frank Fiadufe Ablorde, Co-Founder.
+    Southpaw Society Ghana is a registered non-governmental organization, duly licensed by the Department of Social Welfare of Ghana, and committed to empowering marginalized individuals while building inclusive, sustainable communities across the nation. The organization is led by Linda Nmonkua Bumor, President of Southpaw Society Ghana, together with Frank Ablorde Fiadufe, Co-Founder.
 Together, they are spearheading a transformative social movement focused on advocacy, capacity building, and practical interventions that restore dignity, unlock potential, and promote social justice. Through strategic programs, partnerships, and grassroots engagement, Southpaw Society Ghana equips individuals and communities to thrive, contribute meaningfully to society, and drive long-term positive change.
 Rooted in compassion, equity, and service, Southpaw Society Ghana exists as a catalyst for hope, resilience, and sustainable development.
   </p>
@@ -621,12 +54,12 @@ Rooted in compassion, equity, and service, Southpaw Society Ghana exists as a ca
     <div class="leader-card">
       <img src="images/linda.jpg" alt="Linda Nmonkua Bumor">
       <h3>Linda Nmonkua Bumor</h3>
-      <p>President, Southpaw Society Ghana</p>
+      <p>Founder/President, Southpaw Society Ghana</p>
     </div>
 
     <div class="leader-card">
-      <img src="images/frank-v3.jpg" alt="Frank Fiadufe Ablorde">
-      <h3>Frank Fiadufe Ablorde</h3>
+      <img src="images/frank-v3.jpg" alt="Frank Ablorde Fiadufe">
+      <h3>Frank Ablorde Fiadufe </h3>
       <p>Co-Founder, Southpaw Society Ghana</p>
     </div>
     
@@ -639,7 +72,7 @@ Rooted in compassion, equity, and service, Southpaw Society Ghana exists as a ca
     <div class="leader-card">
       <img src="images/Emmanuel.jpg" alt="Emmanuel Quansah">
       <h3>Emmanuel Quansah</h3>
-      <p>Graphic Designer | Visual Strategist</p>
+      <p>Graphic Designer/Social Media Manager, Southpaw Society Ghana</p>
     </div>
 
   </div>
@@ -712,47 +145,50 @@ Rooted in compassion, equity, and service, Southpaw Society Ghana exists as a ca
   <div class="gallery-image">
     <img id="slide-image" src="images/gallery4.jpg" alt="Gallery image">
   </div>
+  <div class="gallery-dots" id="galleryDots"></div>
   <p id="slide-caption">Meet the Team</p>
+
 </div>
 
     <button class="slide-btn next">&#10095;</button>
   </div>
-</section>
 
-<section id="videos">
+  <div>
   <h2>Video Highlights</h2>
 
-  <div class="video-slider">
-    <button class="video-nav left" onclick="prevVideo()">&#10094;</button>
+  <div class="video-player-wrapper">
+    <video id="mainPlayer" controls>
+      <source src="images/video1.mp4" type="video/mp4">
+      Your browser does not support the video tag.
+    </video>
 
-    <div class="video-frame">
-      <video class="gallery-video active" controls>
-        <source src="images/video1.mp4" type="video/mp4">
-        Your browser does not support the video tag.
-      </video>
+    <div class="video-controls-bar">
+      <button class="vid-btn" onclick="changeVideo(-1)">&#10094; Prev</button>
 
-      <video class="gallery-video active" controls>
-        <source src="images/video3.mp4" type="video/mp4">
-      </video>
+      <span id="videoTitle">Community Outreach Engagement</span>
 
-      <video class="gallery-video active" controls>
-        <source src="images/video2.mp4" type="video/mp4">
-      </video>
+      <button class="vid-btn" onclick="changeVideo(1)">Next &#10095;</button>
     </div>
-
-    <button class="video-nav right" onclick="nextVideo()">&#10095;</button>
   </div>
-
-  <p class="video-caption" id="videoCaption">
-    School Workshop – Left-handed awareness session
-  </p>
+</div> 
 </section>
+
 
 
 <footer>
   <div class="footer-content">
     <h3>Southpaw Society Ghana</h3>
     <p>Non-Profit Organization, Ghana</p>
+
+  <div class="contact-buttons">
+  <a href="tel:+233545809619" class="contact-btn call">
+    📞 Call Us
+  </a>
+
+  <a href="mailto:southpawsocietyghana@gmail.com" class="contact-btn email">
+    ✉️ Email Us
+  </a>
+  </div>
     
     <div class="socials buttons">
   <a href="https://www.instagram.com/southpawsocietyghana?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw==" target="_blank" class="social-btn instagram">Instagram</a>
@@ -766,15 +202,6 @@ Rooted in compassion, equity, and service, Southpaw Society Ghana exists as a ca
   <a href="https://www.linkedin.com/in/southpaw-society-ghana-117325343?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=ios_app" target="_blank" class="social-btn linkedin">LinkedIn</a>
 </div>
   
-  <div class="contact-buttons">
-  <a href="tel:+233545809619" class="contact-btn call">
-    📞 Call Us
-  </a>
-
-  <a href="mailto:southpawsocietyghana@gmail.com" class="contact-btn email">
-    ✉️ Email Us
-  </a>
-  </div>
   
 
     <p style="font-size: 12px; margin-top: 30px; color: #666; "> &copy; 2024 Southpaw Society Ghana LBG. All rights reserved.</p>
@@ -782,105 +209,7 @@ Rooted in compassion, equity, and service, Southpaw Society Ghana exists as a ca
 
 </footer>
 
-<script>
-  const images = [
-    {
-      src: "images/gallery1.jpg",
-      caption: "Public Advocacy Engagement"
-    },
-    {
-      src: "images/gallery2.jpg",
-      caption: "Public Advocacy Engagement"
-    },
-    {
-      src: "images/gallery3.jpg",
-      caption: "Public Advocacy Engagement"
-    },
-    {
-      src: "images/gallery4.jpg",
-      caption: "Meet the Team"
-    },
-
-    {
-      src: "images/gallery5.jpg",
-      caption: "School Workshop"
-    },
-
-    {
-      src: "images/gallery6.jpg",
-      caption: "School Workshop"
-    },
-
-    {
-      src: "images/gallery7.jpg",
-      caption: "School Workshop"
-    },
-
-    {
-      src: "images/gallery8.jpg",
-      caption: "Community Engagement"
-    },
-
-    {
-      src: "images/gallery9.jpg",
-      caption: "Community Engagement"
-    },
-  ];
-
-  let currentIndex = 0;
-
-  const slideImage = document.getElementById("slide-image");
-  const slideCaption = document.getElementById("slide-caption");
-
-  document.querySelector(".next").addEventListener("click", () => {
-    currentIndex = (currentIndex + 1) % images.length;
-    updateSlide();
-  });
-
-  document.querySelector(".prev").addEventListener("click", () => {
-    currentIndex = (currentIndex - 1 + images.length) % images.length;
-    updateSlide();
-  });
-
-  function updateSlide() {
-    slideImage.src = images[currentIndex].src;
-    slideCaption.textContent = images[currentIndex].caption;
-  }
-</script>
-
-<script>
-  let currentVideo = 0;
-  const videos = document.querySelectorAll(".gallery-video");
-  const captions = [
-    "Community Outreach Engagement",
-    "School Workshop – Left-handed awareness session",
-    "Celebration of World Lefties Day"
-  ];
-  const captionEl = document.getElementById("videoCaption");
-
-  function showVideo(index) {
-    videos.forEach(video => {
-      video.pause();
-      video.currentTime = 0;
-      video.classList.remove("active");
-    });
-
-    videos[index].classList.add("active");
-    captionEl.textContent = captions[index];
-  }
-
-  function nextVideo() {
-    currentVideo = (currentVideo + 1) % videos.length;
-    showVideo(currentVideo);
-  }
-
-  function prevVideo() {
-    currentVideo = (currentVideo - 1 + videos.length) % videos.length;
-    showVideo(currentVideo);
-  }
-</script>
+<script src="js/script.js"></script>
 
 </body>
 </html>
-
-
