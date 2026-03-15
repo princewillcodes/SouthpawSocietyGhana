@@ -504,24 +504,44 @@ footer {
 .footer-content h3 {
   margin-top: 0;
   color: var(--secondary-color);
+  margin-bottom: 20px;
 }
 
-.socials {
-  margin-top: 20px;
+/* Container for the round icons */
+.socials.buttons {
+  margin-top: 20px; 
+  display: flex; 
+  justify-content: center; 
+  gap: 15px; 
+  flex-wrap: wrap;
 }
 
-.socials a {
-  color: #ccc;
-  margin: 0 12px;
+/* Styling the round icons */
+.social-icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 45px;
+  height: 45px;
+  border-radius: 50%;
+  color: #fff;
+  font-size: 20px;
   text-decoration: none;
-  font-size: 15px;
-  transition: color 0.3s;
-  cursor: pointer;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
-.socials a:hover {
-  color: var(--secondary-color);
+.social-icon:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 6px 15px rgba(0,0,0,0.3);
+  color: #fff; /* Keeps icon white on hover */
 }
+
+.instagram { background: linear-gradient(45deg, #f09433 0%, #e6683c 25%, #dc2743 50%, #cc2366 75%, #bc1888 100%); }
+.facebook  { background: #1877f2; }
+.tiktok    { background: #000000; border: 1px solid #333; }
+.whatsapp  { background: #25d366; }
+.linkedin  { background: #0077b5; }
+
 
 .contact-buttons {
   margin-top: 25px;
@@ -531,7 +551,7 @@ footer {
   flex-wrap: wrap;
 }
 
-.contact-btn {
+.contact-buttons .cta-button {
   padding: 12px 22px;
   border-radius: 50px;
   text-decoration: none;
@@ -539,48 +559,12 @@ footer {
   font-size: 14px;
   transition: transform 0.2s, background 0.2s;
   color: #fff;
-  display: inline-block;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
 }
 
-.contact-btn.call {
-  background-color: var(--primary-color);
-}
-
-.contact-btn.email {
-  background-color: var(--secondary-color);
-}
-
-.contact-btn:hover {
-  transform: translateY(-2px);
-  opacity: 0.9;
-}
-
-.socials.buttons {
-  margin-top: 20px;
-  display: flex;
-  justify-content: center;
-  gap: 12px;
-  flex-wrap: wrap;
-}
-
-.social-btn {
-  padding: 10px 18px;
-  border-radius: 50px;
-  text-decoration: none;
-  font-size: 13px;
-  font-weight: 600;
-  color: #fff;
-  transition: transform 0.2s, opacity 0.2s;
-  display: inline-block;
-}
-
-.social-btn.instagram { background: #e1306c; }
-.social-btn.facebook  { background: #1877f2; }
-.social-btn.tiktok    { background: #000000; }
-.social-btn.whatsapp  { background: #25d366; }
-.social-btn.linkedin  { background: #0a66c2; }
-
-.social-btn:hover {
+.contact-buttons .cta-button:hover {
   transform: translateY(-2px);
   opacity: 0.9;
 }
