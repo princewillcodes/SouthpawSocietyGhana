@@ -1,128 +1,207 @@
-/* =========================
-   1. MOBILE NAVIGATION
-========================= */
-
+// ==========================================
+// --- 1. MOBILE MENU TOGGLE ---
+// ==========================================
 function toggleMenu() {
-  const nav = document.getElementById('navLinks');
-  nav.classList.toggle('active');
-}
-
-
-/* =========================
-   2. MAIN VIDEO PLAYER (Playlist)
-   Easy to edit: just add videos
-========================= */
-
-const videoPlaylist = [
-  {file: "images/video1.mp4",title: "Community Outreach Engagement"},
-  {file: "images/video2.mp4",title: "World Lefties Day Celebration"},
-  {file: "images/video3.mp4",title: "School Workshop Awareness"}
-];
-
-let currentVideoIndex = 0;
-
-const player = document.getElementById('mainPlayer');
-const titleLabel = document.getElementById('videoTitle');
-
-function changeVideo(direction) {
-  currentVideoIndex += direction;
-
-  if (currentVideoIndex >= videoPlaylist.length) {
-    currentVideoIndex = 0;
+  const menu = document.getElementById('mobileMenu');
+  if (menu) {
+    menu.classList.toggle('hidden');
   }
+}
 
-  if (currentVideoIndex < 0) {
-    currentVideoIndex = videoPlaylist.length - 1;
+
+// ==========================================
+// --- 2. THE SOUTHPAW CHALLENGE (PUZZLE) ---
+// ==========================================
+let puzzleState = [];
+const board = document.getElementById('puzzle-board');
+const winMessage = document.getElementById('win-message');
+
+function initPuzzle() {
+  if(!board) return; 
+  
+  if (winMessage) winMessage.classList.add('hidden');
+  puzzleState = [1, 2, 3, 4, 5, 6, 7, 8, 0];
+  
+  for (let i = puzzleState.length - 1; i > 0; i--) {
+    const j = Math.floor(Math.random() * (i + 1));
+    [puzzleState[i], puzzleState[j]] = [puzzleState[j], puzzleState[i]];
   }
-
-  const nextVideo = videoPlaylist[currentVideoIndex];
-  player.src = nextVideo.file;
-  titleLabel.textContent = nextVideo.title;
-  player.play();
+  
+  if (!isSolvable(puzzleState)) {
+    if (puzzleState[0] !== 0 && puzzleState[1] !== 0) {
+      [puzzleState[0], puzzleState[1]] = [puzzleState[1], puzzleState[0]];
+    } else {
+      [puzzleState[2], puzzleState[3]] = [puzzleState[3], puzzleState[2]];
+    }
+  }
+  
+  renderPuzzle();
 }
 
-
-/* =========================
-   3. IMAGE GALLERY SLIDER
-========================= */
-
-const images = [
-  { src: "images/gallery1.jpg", caption: "Public Advocacy Engagement" },
-  { src: "images/gallery2.jpg", caption: "Public Advocacy Engagement" },
-  { src: "images/gallery3.jpg", caption: "Public Advocacy Engagement" },
-  { src: "images/gallery4.jpg", caption: "Meet the Team" },
-  { src: "images/gallery5.jpg", caption: "School Workshop" },
-  { src: "images/gallery6.jpg", caption: "School Workshop" },
-  { src: "images/gallery7.jpg", caption: "School Workshop" },
-  { src: "images/gallery8.jpg", caption: "Community Engagement" },
-  { src: "images/gallery9.jpg", caption: "Community Engagement" }
-];
-
-let currentIndex = 0;
-
-const slideImage = document.getElementById("slide-image");
-const slideCaption = document.getElementById("slide-caption");
-
-function updateSlide() {
-  slideImage.src = images[currentIndex].src;
-  slideCaption.textContent = images[currentIndex].caption;
+function isSolvable(state) {
+  let inversions = 0;
+  for (let i = 0; i < state.length - 1; i++) {
+    for (let j = i + 1; j < state.length; j++) {
+      if (state[i] !== 0 && state[j] !== 0 && state[i] > state[j]) {
+        inversions++;
+      }
+    }
+  }
+  return inversions % 2 === 0;
 }
 
-document.querySelector(".next").addEventListener("click", () => {
-  currentIndex = (currentIndex + 1) % images.length;
-  updateSlide();
-});
-
-document.querySelector(".prev").addEventListener("click", () => {
-  currentIndex = (currentIndex - 1 + images.length) % images.length;
-  updateSlide();
-});
-
-const dotsContainer = document.getElementById("galleryDots");
-
-function createDots() {
-  dotsContainer.innerHTML = "";
-  images.forEach((_, index) => {
-    const dot = document.createElement("span");
-    if (index === currentIndex) dot.classList.add("active");
-    dotsContainer.appendChild(dot);
+function renderPuzzle() {
+  board.innerHTML = '';
+  puzzleState.forEach((tileNumber, index) => {
+    const tile = document.createElement('div');
+    
+    if (tileNumber === 0) {
+      tile.className = 'w-full h-full bg-transparent rounded-lg';
+    } else {
+      tile.className = 'w-full h-full bg-[#e29578] text-white text-3xl font-bold flex items-center justify-center rounded-lg cursor-pointer hover:bg-[#d17b5c] transition transform hover:scale-[0.96] shadow-sm select-none';
+      tile.textContent = tileNumber;
+      tile.onclick = () => moveTile(index);
+    }
+    board.appendChild(tile);
   });
 }
 
-function updateDots() {
-  const dots = dotsContainer.querySelectorAll("span");
-  dots.forEach(dot => dot.classList.remove("active"));
-  dots[currentIndex].classList.add("active");
-}
+function moveTile(index) {
+  const emptyIndex = puzzleState.indexOf(0);
+  
+  const validMoves = [
+    emptyIndex - 1,
+    emptyIndex + 1,
+    emptyIndex - 3,
+    emptyIndex + 3
+  ];
 
-/* Call once on load */
-createDots();
+  if (emptyIndex % 3 === 0 && index === emptyIndex - 1) return;
+  if ((emptyIndex + 1) % 3 === 0 && index === emptyIndex + 1) return;
 
-/* Update dots when slide changes */
-function updateSlide() {
-  slideImage.src = images[currentIndex].src;
-  slideCaption.textContent = images[currentIndex].caption;
-  updateDots();
-}
-
-let startX = 0;
-
-slideImage.addEventListener("touchstart", (e) => {
-  startX = e.touches[0].clientX;
-});
-
-slideImage.addEventListener("touchend", (e) => {
-  const endX = e.changedTouches[0].clientX;
-  const diff = startX - endX;
-
-  if (Math.abs(diff) > 50) {
-    if (diff > 0) {
-      // Swipe left → next
-      currentIndex = (currentIndex + 1) % images.length;
-    } else {
-      // Swipe right → prev
-      currentIndex = (currentIndex - 1 + images.length) % images.length;
-    }
-    updateSlide();
+  if (validMoves.includes(index)) {
+    [puzzleState[index], puzzleState[emptyIndex]] = [puzzleState[emptyIndex], puzzleState[index]];
+    renderPuzzle();
+    checkWin();
   }
+}
+
+function checkWin() {
+  const winningState = [1, 2, 3, 4, 5, 6, 7, 8, 0];
+  const isWinner = puzzleState.every((val, index) => val === winningState[index]);
+  
+  if (isWinner && winMessage) {
+    winMessage.classList.remove('hidden');
+  }
+}
+
+document.addEventListener('DOMContentLoaded', initPuzzle);
+
+
+// ==========================================
+// --- 3. MEDIA PAGE: GALLERY FILTERING ---
+// ==========================================
+function filterGallery(category) {
+  const items = document.querySelectorAll('.gallery-item');
+  const buttons = document.querySelectorAll('.gallery-filter-btn');
+
+  buttons.forEach(btn => {
+    btn.classList.remove('bg-[#006d77]', 'text-white');
+    btn.classList.add('bg-white', 'text-gray-600');
+    
+    if(btn.getAttribute('onclick').includes(category)) {
+      btn.classList.remove('bg-white', 'text-gray-600');
+      btn.classList.add('bg-[#006d77]', 'text-white');
+    }
+  });
+
+  items.forEach(item => {
+    if (category === 'all' || item.classList.contains(category)) {
+      item.style.display = 'block';
+      item.animate([{ opacity: 0 }, { opacity: 1 }], { duration: 400, fill: 'forwards' });
+    } else {
+      item.style.display = 'none';
+    }
+  });
+}
+
+
+// ==========================================
+// --- 4. MEDIA PAGE: VIDEO PLAYLIST ---
+// ==========================================
+const videoSources = [
+  "images/video1.mp4", 
+  "images/video2.mp4", 
+  "images/video3.mp4"
+];
+
+function playVideo(index, btnElement) {
+  const player = document.getElementById('mainPlayer');
+  if(!player) return;
+
+  const source = player.querySelector('source');
+  source.src = videoSources[index];
+  player.load();
+  player.play();
+
+  const buttons = document.querySelectorAll('.playlist-btn');
+  buttons.forEach(btn => {
+    btn.classList.remove('bg-white/10', 'border-[#e29578]');
+    btn.classList.add('bg-transparent', 'border-transparent');
+    
+    const iconContainer = btn.querySelector('.bg-black, .bg-gray-800');
+    if(iconContainer) {
+        iconContainer.classList.remove('bg-black');
+        iconContainer.classList.add('bg-gray-800');
+    }
+  });
+
+  btnElement.classList.remove('bg-transparent', 'border-transparent');
+  btnElement.classList.add('bg-white/10', 'border-[#e29578]');
+  
+  const activeIcon = btnElement.querySelector('.bg-gray-800');
+  if(activeIcon) {
+      activeIcon.classList.remove('bg-gray-800');
+      activeIcon.classList.add('bg-black');
+  }
+}
+
+
+// ==========================================
+// --- 5. ABOUT PAGE: GOOGLE SHEETS FORM ---
+// ==========================================
+document.addEventListener('DOMContentLoaded', () => {
+  const form = document.getElementById('storyForm');
+  const successBox = document.getElementById('formSuccessMessage');
+  
+  if (!form) return; 
+
+  form.addEventListener('submit', function(e) {
+    e.preventDefault(); 
+    
+    const submitBtn = form.querySelector('button[type="submit"]');
+    const originalBtnHTML = submitBtn.innerHTML;
+    submitBtn.innerHTML = '<i class="fa-solid fa-circle-notch animate-spin"></i> Submitting...';
+    submitBtn.disabled = true;
+
+    const formData = new FormData(form);
+    
+    // Live published Google macro endpoint connection string
+    const scriptURL = 'https://script.google.com/macros/s/AKfycby-XfqP9QnO1FqljLEngmbzM90afrUaItS57XgFeolDpbMkYdMvQnYQOZ_a1bkKQgL_cw/exec';
+
+    fetch(scriptURL, { 
+      method: 'POST', 
+      body: formData 
+    })
+    .then(response => {
+      form.classList.add('hidden');
+      if (successBox) successBox.classList.remove('hidden');
+    })
+    .catch(error => {
+      console.error('Error submitting story data:', error);
+      alert('Something went wrong. Please check your internet connection and try again!');
+      submitBtn.innerHTML = originalBtnHTML;
+      submitBtn.disabled = false;
+    });
+  });
 });
