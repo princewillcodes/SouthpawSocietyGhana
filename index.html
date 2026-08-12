@@ -2,221 +2,324 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>Southpaw Society Ghana</title>
-  <meta name="description" content="Empowering left-handed individuals and challenging stigma in Ghana.">
+  <title>Southpaw Society Ghana | Empowering Left-Handed Voices</title>
+  <meta name="description" content="Empowering left-handed individuals and challenging cultural stigma in Ghana.">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-
- <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
-
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  
+  <script src="https://cdn.tailwindcss.com"></script>
+  
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            primary: '#006d77',
+            secondary: '#e29578',
+            lightbg: '#edf6f9',
+            darktext: '#2d3436',
+          },
+          fontFamily: {
+            sans: ['Poppins', 'sans-serif'],
+          }
+        }
+      }
+    }
+  </script>
 
   <link rel="stylesheet" href="css/style.css">
-  <link rel="icon" href="favicon.png" type="image/png">
 </head>
+<body class="font-sans text-darktext bg-white antialiased" id="top">
 
-<body>
+  <header class="fixed w-full top-0 z-50 bg-white/90 backdrop-blur-md border-b border-gray-100 shadow-sm transition-all duration-300">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="flex justify-between items-center h-20">
 
-<header id="top">
-  <nav>
-    <a class="logo"  href="#top">Southpaw Society Ghana</a>
+        <a href="index.html" class="flex items-center gap-3 group">
+          <div class="w-12 h-12 rounded-full overflow-hidden flex items-center justify-center bg-white border border-gray-100 shadow-sm flex-shrink-0">
+            <img src="images/logo.png" alt="SSG Logo" class="w-full h-full object-cover">
+          </div>
+          <div class="flex flex-col">
+            <span class="font-bold text-lg leading-tight text-primary group-hover:text-secondary transition duration-300">
+              Southpaw Society Ghana
+            </span>
+            <span class="text-[10px] uppercase font-bold tracking-widest text-gray-400">
+              Advocacy & Inclusion
+            </span>
+          </div>
+        </a>
 
-    <div class="hamburger" onclick="toggleMenu()">☰</div>
+        <nav class="hidden md:flex space-x-8 items-center">
+          <a href="index.html" class="text-primary font-semibold">Home</a>
+          <a href="about.html" class="text-gray-600 hover:text-primary transition font-medium">About</a>
+          <a href="publications.html" class="text-gray-600 hover:text-secondary transition font-medium">Publications</a>
+          <a href="media.html" class="text-gray-600 hover:text-secondary transition font-medium">Media</a>
+          <a href="involved.html" class="bg-secondary text-white px-6 py-2.5 rounded-full font-semibold hover:bg-[#d17b5c] transition shadow-md">Donate / Join</a>
+        </nav>
 
-    <div class="nav-links" id="navLinks">
-      <a href="#about" onclick="toggleMenu()">About</a>
-      <a href="#mission" onclick="toggleMenu()">Mission</a>
-      <a href="#objectives" onclick="toggleMenu()">Objectives</a>
-      <a href="#events" onclick="toggleMenu()">Upcoming Events</a>
-      <a href="#volunteer" onclick="toggleMenu()">Volunteer</a>
-      <a href="#gallery" onclick="toggleMenu()">Gallery</a>
-    </div>
-  </nav>
-</header>
-
-<section class="hero">
-  <img src="images/logo.png" alt="Southpaw Society Ghana Logo" class="hero-logo">
-  <h1>Southpaw Society Ghana</h1>
-  <p><strong>Empowering left-handed individuals and challenging stigma.</strong></p>
-  <a href="#mission" class="cta-button">Learn More</a>
-</section>
-
-<section id="about">
-  <h2>About Us</h2>
-  <p>
-    Southpaw Society Ghana is a registered non-governmental organization, duly licensed by the Department of Social Welfare of Ghana, and committed to empowering marginalized individuals while building inclusive, sustainable communities across the nation. The organization is led by Linda Nmonkua Bumor, President of Southpaw Society Ghana, together with Frank Ablorde Fiadufe, Co-Founder.
-Together, they are spearheading a transformative social movement focused on advocacy, capacity building, and practical interventions that restore dignity, unlock potential, and promote social justice. Through strategic programs, partnerships, and grassroots engagement, Southpaw Society Ghana equips individuals and communities to thrive, contribute meaningfully to society, and drive long-term positive change.
-Rooted in compassion, equity, and service, Southpaw Society Ghana exists as a catalyst for hope, resilience, and sustainable development.
-  </p>
-</section>
-
-<section class="leadership">
-  <h2>Our Team</h2>
-
-  <div class="leaders">
-    <div class="leader-card">
-      <img src="images/linda.jpg" alt="Linda Nmonkua Bumor">
-      <h3>Linda Nmonkua Bumor</h3>
-      <p>Founder/President, Southpaw Society Ghana</p>
-    </div>
-
-    <div class="leader-card">
-      <img src="images/frank-v3.jpg" alt="Frank Ablorde Fiadufe">
-      <h3>Frank Ablorde Fiadufe </h3>
-      <p>Co-Founder, Southpaw Society Ghana</p>
-    </div>
-    
-    <div class="leader-card">
-      <img src="images/Mabel.jpg" alt="Mabel Mensah">
-      <h3>Mabel Mensah</h3>
-      <p>Public Relations Officer, Southpaw Society Ghana</p>
-    </div>
-
-    <div class="leader-card">
-      <img src="images/Emmanuel.jpg" alt="Emmanuel Quansah">
-      <h3>Emmanuel Quansah</h3>
-      <p>Graphic Designer/Visual Strategist, Southpaw Society Ghana</p>
-    </div>
-
-  </div>
-</section>
-
-<section id="mission">
-  <div class="mission-grid">
-    <div class="card">
-      <h3>Our Vision</h3>
-      <p>A Ghanaian society where left-handed individuals are respected, empowered, and treated equally.</p>
-    </div>
-    <div class="card">
-      <h3>Our Mission</h3>
-      <p>Advocating for the rights of left-handed people, raising public awareness, eliminating stigma, promoting inclusivity in educational and professional spaces, and supporting affected individuals and families.</p>
-    </div>
-  </div>
-</section>
-
-<section id="objectives" class="objectives">
-  <h2>Our Objectives</h2>
-  <ul>
-    <li><strong>Education:</strong> Correct the wrong attempts to force southpaws to become right-handed.</li>
-    <li><strong>Advocacy:</strong> Reduce and eliminate stigmatization due to cultural misconceptions.</li>
-    <li><strong>Empowerment:</strong> Encourage southpaws to attain their dreams regardless of their handedness.</li>
-  </ul>
-</section>
-
-<section id="events" class="events-section">
-  <h2>Upcoming Events</h2>
-
-  <div class="events-grid">
-
-    <div class="event-card">
-      <div class="event-image">
-        <img src="images/event1.jpg" alt="World Lefties Day">
-      </div>
-
-      <div class="event-caption">
-        <h3>World Lefties Day</h3>
-        <p>13 August</p>
-        <span>In front of Accra Mall</span>
+        <button class="md:hidden text-primary text-2xl focus:outline-none" onclick="toggleMenu()">
+          <i class="fa-solid fa-bars"></i>
+        </button>
       </div>
     </div>
 
-  </div>
-</section>
-
-<section id="volunteer">
-  <h2>Volunteer With Us</h2>
-  <p>
-    Are you passionate about inclusion, advocacy, and empowering left-handed individuals?
-    Join our volunteer team and help us make a positive impact in communities across Ghana.
-  </p>
-
-
-  <div class="volunteer-form">
-  <a href="https://forms.gle/SSmkNPqyBv2YmePT7" target="_blank" class="cta-button">
-    Become a Volunteer
-  </a>
-</div>
-</section>
-
-<section id="gallery">
-  <h2>Our Work in Action</h2>
-
-  <div class="slideshow">
-    <button class="slide-btn prev">&#10094;</button>
-
-    <div class="slide">
-  <div class="gallery-image">
-    <img id="slide-image" src="images/gallery4.jpg" alt="Gallery image">
-  </div>
-  <div class="gallery-dots" id="galleryDots"></div>
-  <p id="slide-caption">Meet the Team</p>
-
-</div>
-
-    <button class="slide-btn next">&#10095;</button>
-  </div>
-
-  <div>
-  <h2>Video Highlights</h2>
-
-  <div class="video-player-wrapper">
-    <video id="mainPlayer" controls>
-      <source src="images/video1.mp4" type="video/mp4">
-      Your browser does not support the video tag.
-    </video>
-
-    <div class="video-controls-bar">
-      <button class="vid-btn" onclick="changeVideo(-1)">&#10094; Prev</button>
-
-      <span id="videoTitle">Community Outreach Engagement</span>
-
-      <button class="vid-btn" onclick="changeVideo(1)">Next &#10095;</button>
+    <div id="mobileMenu" class="hidden md:hidden bg-white border-t border-gray-100 shadow-lg absolute w-full">
+      <a href="index.html" class="block px-6 py-4 text-primary font-semibold border-b border-gray-50">Home</a>
+      <a href="about.html" class="block px-6 py-4 text-gray-600 border-b border-gray-50">About Us</a>
+      <a href="publications.html" class="block px-6 py-4 text-gray-600 border-b border-gray-50">Publications</a>
+      <a href="media.html" class="block px-6 py-4 text-gray-600 border-b border-gray-50">Media</a>
+      <a href="involved.html" class="block px-6 py-4 text-secondary font-bold">Donate / Volunteer</a>
     </div>
-  </div>
-</div> 
-</section>
+  </header>
 
-
-
-<footer>
-  <div class="footer-content">
-    <h3>Southpaw Society Ghana</h3>
-    <p>Non-Profit Organization, Ghana</p>
+  <!-- CELEBRATORY SOUTHPAW DAY BANNER -->
+  <section class="pt-28 pb-8 px-4 bg-gradient-to-b from-[#e0f2fe] to-transparent">
+    <div class="bg-primary text-white py-12 px-6 rounded-3xl shadow-2xl max-w-5xl mx-auto border border-[#3E92A1] relative overflow-hidden text-center">
+      
+      
+      <span class="absolute inset-0 flex items-center justify-center text-[180px] font-black text-white/5 select-none pointer-events-none">
+        AUG 13
+      </span>
     
-  <div class="contact-buttons">
-      <a href="tel:+233545809619" class="cta-button">
-        <i class="fa-solid fa-phone"></i> Call Us
-      </a>
-      <a href="mailto:southpawsocietyghana@gmail.com" class="cta-button" style="background:var(--secondary-color)">
-        <i class="fa-solid fa-envelope"></i> Email Us
-      </a>
-    </div>
+      <div class="relative z-10 space-y-4">
+        
+        <span class="inline-block bg-secondary/20 text-secondary text-xs font-bold uppercase tracking-widest px-4 py-1.5 rounded-full border border-secondary/30">
+          Happy International Left-Handers Day! 🎉
+        </span>
     
-  <div class="socials buttons">
-      <a href="https://www.instagram.com/southpawsocietyghana?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw==" target="_blank" class="social-icon instagram" aria-label="Instagram">
-        <i class="fa-brands fa-instagram"></i>
-      </a>
-      <a href="https://www.facebook.com/profile.php?id=61571130084951" target="_blank" class="social-icon facebook" aria-label="Facebook">
-        <i class="fa-brands fa-facebook-f"></i>
-      </a>
-      <a href="https://www.tiktok.com/@southpaw.society?is_from_webapp=1&sender_device=pc" target="_blank" class="social-icon tiktok" aria-label="TikTok">
-        <i class="fa-brands fa-tiktok"></i>
-      </a>
-      <a href="https://api.whatsapp.com/send/?phone=233545809619&text=Hello,&type=phone_number&app_absent=0" target="_blank" class="social-icon whatsapp" aria-label="WhatsApp">
-        <i class="fa-brands fa-whatsapp"></i>
-      </a>
-      <a href="https://www.linkedin.com/in/southpaw-society-ghana-117325343?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=ios_app" target="_blank" class="social-icon linkedin" aria-label="LinkedIn">
-        <i class="fa-brands fa-linkedin-in"></i>
-      </a>
+        
+        <h1 class="text-4xl md:text-5xl font-black tracking-tight text-white">
+          Stop the Discrimination Now!
+        </h1>
+    
+        
+        <p class="text-teal-50 text-base md:text-lg max-w-2xl mx-auto leading-relaxed">
+          Your left hand is your power, not a flaw. Today, we celebrate every left-handed Ghanaian. Share your story and stand with us to build an inclusive society for all hands.
+        </p>
+    
+        
+        <div class="pt-4">
+          <a href="involved.html" class="inline-flex items-center gap-2 bg-secondary hover:bg-[#d17b5c] text-white font-bold px-8 py-3.5 rounded-xl shadow-lg hover:shadow-xl transition-all duration-200">
+            <span>Join the Movement</span>
+            <i class="fa-solid fa-arrow-right"></i>
+          </a>
+        </div>
+      </div>
     </div>
-  
-  
+  </section>
+  <!-- END BANNER -->
 
-    <p style="font-size: 12px; margin-top: 30px; color: #666; "> &copy; 2024 Southpaw Society Ghana LBG. All rights reserved.</p>
-  </div>
+  <section class="relative pb-24 lg:pb-32 overflow-hidden bg-gradient-to-b from-transparent via-[#f0f9ff] to-white">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 text-center flex flex-col items-center">
 
-</footer>
+      <div class="w-36 h-36 md:w-40 md:h-40 rounded-full overflow-hidden bg-black flex items-center justify-center shadow-[0_10px_35px_rgba(0,0,0,0.2)] mb-8 transform hover:scale-105 transition duration-500 ease-out border border-white/10">
+        <img src="images/logo.png" alt="Southpaw Society Ghana Logo" class="w-full h-full object-cover">
+      </div>
 
-<script src="js/script.js"></script>
+      <h1 class="text-3xl md:text-5xl font-extrabold text-[#006d77] mb-4 tracking-tight">
+        Southpaw Society Ghana
+      </h1>
+      
+      <p class="text-base md:text-lg font-semibold text-gray-700 max-w-2xl mx-auto leading-relaxed">
+        Empowering left-handed individuals and challenging stigma.
+      </p>
 
+      <div class="flex flex-col sm:flex-row justify-center gap-4 mt-8">
+        <a href="about.html" class="bg-[#006d77] text-white px-8 py-3 rounded-full font-semibold text-base hover:bg-[#004d55] transition shadow-md hover:shadow-lg transform hover:-translate-y-0.5">
+          Discover Our Mission
+        </a>
+        <a href="involved.html" class="bg-white text-[#006d77] border border-[#006d77]/30 px-8 py-3 rounded-full font-semibold text-base hover:bg-sky-50 transition shadow-sm transform hover:-translate-y-0.5">
+          Get Involved
+        </a>
+      </div>
+
+    </div>
+  </section>
+
+  <section class="bg-primary py-12 border-y border-[#005259]">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="grid grid-cols-2 md:grid-cols-4 gap-6 md:gap-0 divide-y md:divide-y-0 md:divide-x divide-[#008b96]/50 text-center">
+
+        <div class="py-4 md:py-0 px-2">
+          <h3 class="text-4xl md:text-5xl font-extrabold text-secondary mb-2">1</h3>
+          <p class="text-[10px] md:text-xs font-bold text-white tracking-widest uppercase">Unified Community</p>
+        </div>
+
+        <div class="py-4 md:py-0 px-2">
+          <h3 class="text-4xl md:text-5xl font-extrabold text-secondary mb-2">16</h3>
+          <p class="text-[10px] md:text-xs font-bold text-white tracking-widest uppercase">Regions in Focus</p>
+        </div>
+
+        <div class="py-4 md:py-0 px-2">
+          <h3 class="text-4xl md:text-5xl font-extrabold text-secondary mb-2">24/7</h3>
+          <p class="text-[10px] md:text-xs font-bold text-white tracking-widest uppercase">Advocacy & Support</p>
+        </div>
+
+        <div class="py-4 md:py-0 px-2">
+          <h3 class="text-4xl md:text-5xl font-extrabold text-secondary mb-2">100%</h3>
+          <p class="text-[10px] md:text-xs font-bold text-white tracking-widest uppercase">Commitment to Equity</p>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <section class="py-24 bg-white">
+    <div class="max-w-5xl mx-auto px-4">
+      <div class="text-center mb-14">
+        <h2 class="text-3xl md:text-4xl font-bold text-primary mb-4">Unlearning the Stigma</h2>
+        <div class="w-16 h-1 bg-secondary mx-auto mb-6 rounded-full"></div>
+        <p class="text-gray-600 max-w-2xl mx-auto text-lg">Click the cards to reveal the scientific truth behind common cultural myths.</p>
+      </div>
+      
+      <div class="grid gap-8 md:grid-cols-2">
+        <div class="flip-card cursor-pointer group" onclick="this.classList.toggle('flipped')">
+          <div class="flip-card-inner">
+            <div class="flip-card-front bg-lightbg p-8 rounded-2xl shadow-sm border-t-4 border-secondary flex flex-col justify-between group-hover:shadow-md transition">
+              <span class="text-sm uppercase font-bold text-secondary tracking-wider">Cultural Myth ❌</span>
+              <p class="text-lg font-medium text-darktext my-auto leading-relaxed">"Using the left hand to give, receive, or eat is intentionally disrespectful."</p>
+              <span class="text-sm text-gray-400 text-right font-medium"><i class="fa-solid fa-hand-pointer mr-1"></i> Tap to debunk</span>
+            </div>
+            <div class="flip-card-back bg-primary text-white p-8 rounded-2xl shadow-lg border-t-4 border-secondary flex flex-col justify-between">
+              <span class="text-sm uppercase font-bold text-secondary tracking-wider">Scientific Reality ✅</span>
+              <p class="text-base my-auto leading-relaxed">Handedness is completely biological. Respect comes from the heart and intent, not which hemisphere of the brain controls your dominant hand.</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="flip-card cursor-pointer group" onclick="this.classList.toggle('flipped')">
+          <div class="flip-card-inner">
+            <div class="flip-card-front bg-lightbg p-8 rounded-2xl shadow-sm border-t-4 border-secondary flex flex-col justify-between group-hover:shadow-md transition">
+              <span class="text-sm uppercase font-bold text-secondary tracking-wider">Cultural Myth ❌</span>
+              <p class="text-lg font-medium text-darktext my-auto leading-relaxed">"Left-handedness can be corrected if a child is forced to switch early."</p>
+              <span class="text-sm text-gray-400 text-right font-medium"><i class="fa-solid fa-hand-pointer mr-1"></i> Tap to debunk</span>
+            </div>
+            <div class="flip-card-back bg-primary text-white p-8 rounded-2xl shadow-lg border-t-4 border-secondary flex flex-col justify-between">
+              <span class="text-sm uppercase font-bold text-secondary tracking-wider">Scientific Reality ✅</span>
+              <p class="text-base my-auto leading-relaxed">Forcing a shift causes severe neurological confusion, leading to learning delays, stuttering, and emotional frustration. It should never be "corrected".</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="py-24 bg-lightbg">
+    <div class="max-w-4xl mx-auto px-4 text-center">
+      <h2 class="text-3xl md:text-4xl font-bold text-primary mb-4">The Southpaw Challenge</h2>
+      <div class="w-16 h-1 bg-secondary mx-auto mb-6 rounded-full"></div>
+      <p class="text-gray-600 mb-10 max-w-xl mx-auto text-lg">Rearrange the tiles from 1 to 8! Tap the tiles adjacent to the empty space to slide them into place.</p>
+
+      <div class="relative w-72 h-72 sm:w-80 sm:h-80 mx-auto bg-white border-4 border-primary rounded-xl p-1.5 shadow-2xl">
+        <div id="puzzle-board" class="grid grid-cols-3 grid-rows-3 gap-1.5 w-full h-full">
+          </div>
+        
+        <div id="win-message" class="hidden absolute inset-0 bg-primary/95 flex flex-col items-center justify-center rounded-lg z-10 backdrop-blur-sm">
+          <h3 class="text-3xl font-bold text-white mb-3">You Did It!</h3>
+          <p class="text-teal-100 mb-6 px-6 text-sm leading-relaxed">Every piece has its place, just like every left-handed person in Ghana.</p>
+          <button onclick="initPuzzle()" class="bg-secondary text-white px-6 py-2.5 rounded-full font-bold hover:bg-[#d17b5c] transition transform hover:scale-105 shadow-lg">Play Again</button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="py-24 bg-white">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+      
+      <div class="flex flex-col md:flex-row justify-between items-end mb-12 gap-4">
+        <div>
+          <h2 class="text-3xl font-bold text-primary mb-2 text-left after:content-none">Our Latest Work</h2>
+          <p class="text-gray-600 text-lg">Explore resources, active proposals, and highlights from our field outreach.</p>
+        </div>
+        <div>
+          <a href="media.html" class="text-secondary font-semibold hover:text-[#c76d4f] transition flex items-center gap-1">
+            Explore Media Center <span class="text-xl">&rarr;</span>
+          </a>
+        </div>
+      </div>
+
+      <div class="grid md:grid-cols-3 gap-8">
+        
+        <div class="bg-lightbg rounded-2xl overflow-hidden shadow-sm hover:shadow-xl transition duration-300 group flex flex-col justify-between">
+          <div>
+            <div class="h-48 bg-gradient-to-br from-primary to-[#004d55] flex flex-col justify-center p-6 relative overflow-hidden">
+              <div class="absolute -right-8 -bottom-8 text-white/5 text-9xl font-bold font-serif select-none pointer-events-none">PDF</div>
+              <span class="bg-secondary/20 text-secondary border border-secondary/30 text-[10px] font-bold uppercase tracking-wider px-2.5 py-1 rounded-full w-max mb-3">
+                Campaign Proposal
+              </span>
+              <h4 class="text-white font-bold text-lg leading-snug">
+                World Left-Handers Day Campaign
+              </h4>
+              <p class="text-teal-100/70 text-xs mt-1">Ref: SSG/25/003</p>
+            </div>
+            <div class="p-6">
+              <h3 class="text-xl font-bold text-darktext mb-3">Proposal for Support</h3>
+              <p class="text-sm text-gray-600 leading-relaxed mb-4">
+                Our official strategic framework outlining school workshops, public awareness initiatives, and community dialogues across Ghana.
+              </p>
+              <ul class="space-y-2 mb-4 text-xs text-gray-500 font-medium">
+                <li class="flex items-center gap-2"><i class="fa-solid fa-check text-primary"></i> Parent & Caregiver Education</li>
+                <li class="flex items-center gap-2"><i class="fa-solid fa-check text-primary"></i> Stigma & Myth Challenging</li>
+                <li class="flex items-center gap-2"><i class="fa-solid fa-check text-primary"></i> Youth Empowerment Forums</li>
+              </ul>
+            </div>
+          </div>
+          <div class="px-6 pb-6 pt-2">
+            <a href="publications/SOUTHPAW_fund_raising_General.pdf" target="_blank" class="w-full inline-flex items-center justify-center gap-2 bg-primary text-white py-2.5 rounded-xl font-semibold text-sm hover:bg-[#004d55] transition shadow-sm">
+                <i class="fa-solid fa-file-pdf"></i> View Proposal Document
+            </a>
+          </div>
+        </div>
+
+        <div class="md:col-span-2 bg-black rounded-2xl overflow-hidden shadow-lg relative group aspect-video md:aspect-auto md:h-full">
+          <video class="w-full h-full object-cover opacity-85 group-hover:opacity-100 transition duration-500" controls poster="images/video-poster.jpg">
+            <source src="images/video1.mp4" type="video/mp4">
+            Your browser does not support the video tag.
+          </video>
+          <div class="absolute top-4 left-4 bg-primary/90 text-white text-[10px] font-bold uppercase tracking-widest px-3 py-1.5 rounded-full z-10 shadow-md backdrop-blur-sm">
+            Featured Field Outreach
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <section class="py-20 bg-gradient-to-r from-primary to-[#004d55] text-white text-center">
+    <div class="max-w-4xl mx-auto px-4">
+      <h2 class="text-3xl md:text-4xl font-bold mb-6 text-white">Ready to make an impact?</h2>
+      <p class="text-teal-100 text-lg mb-10 max-w-2xl mx-auto">Join our community of advocates. Whether you volunteer your time or sponsor our educational programs, your support changes lives.</p>
+      <div class="flex flex-col sm:flex-row justify-center gap-4">
+        <a href="involved.html" class="bg-secondary text-white px-8 py-4 rounded-full font-bold text-lg hover:bg-[#d17b5c] transition shadow-lg transform hover:-translate-y-1">Donate Now</a>
+        <a href="involved.html" class="bg-transparent border-2 border-white text-white px-8 py-4 rounded-full font-bold text-lg hover:bg-white/10 transition transform hover:-translate-y-1">Become a Volunteer</a>
+      </div>
+    </div>
+  </section>
+
+  <footer class="bg-[#1a1a1a] text-white pt-16 pb-8">
+    <div class="max-w-6xl mx-auto px-4 text-center">
+      <h3 class="text-2xl font-bold text-secondary mb-8">Southpaw Society Ghana</h3>
+      
+      <div class="flex justify-center gap-4 mb-10">
+        <a href="https://www.instagram.com/southpawsocietyghana" target="_blank" class="w-12 h-12 rounded-full bg-white/10 flex items-center justify-center text-xl hover:bg-gradient-to-tr hover:from-[#f09433] hover:to-[#bc1888] transition-all duration-300 transform hover:-translate-y-1 shadow-md"><i class="fa-brands fa-instagram"></i></a>
+        <a href="https://www.facebook.com/profile.php?id=61571130084951" target="_blank" class="w-12 h-12 rounded-full bg-white/10 flex items-center justify-center text-xl hover:bg-[#1877f2] transition-all duration-300 transform hover:-translate-y-1 shadow-md"><i class="fa-brands fa-facebook-f"></i></a>
+        <a href="https://www.linkedin.com/in/southpaw-society-ghana-117325343" target="_blank" class="w-12 h-12 rounded-full bg-white/10 flex items-center justify-center text-xl hover:bg-[#0077b5] transition-all duration-300 transform hover:-translate-y-1 shadow-md"><i class="fa-brands fa-linkedin-in"></i></a>
+        <a href="https://www.tiktok.com/@southpaw.society" target="_blank" class="w-12 h-12 rounded-full bg-white/10 flex items-center justify-center text-xl hover:bg-black transition-all duration-300 transform hover:-translate-y-1 shadow-md"><i class="fa-brands fa-tiktok"></i></a>
+        <a href="https://api.whatsapp.com/send/?phone=233545809619" target="_blank" class="w-12 h-12 rounded-full bg-white/10 flex items-center justify-center text-xl hover:bg-[#25d366] transition-all duration-300 transform hover:-translate-y-1 shadow-md"><i class="fa-brands fa-whatsapp"></i></a>
+      </div>
+
+      <div class="border-t border-gray-800 pt-8 flex flex-col md:flex-row justify-between items-center gap-4">
+        <p class="text-sm text-gray-500">&copy; 2026 Southpaw Society Ghana LBG. All rights reserved.</p>
+        <div class="text-sm text-gray-500 flex gap-4">
+          <a href="mailto:southpawsocietyghana@gmail.com" class="hover:text-secondary transition"><i class="fa-solid fa-envelope mr-1"></i> Email Us</a>
+          <a href="tel:+233545809619" class="hover:text-secondary transition"><i class="fa-solid fa-phone mr-1"></i> Call Us</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script src="js/script.js"></script>
 </body>
 </html>

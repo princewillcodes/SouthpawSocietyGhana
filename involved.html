@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Get Involved | Southpaw Society Ghana</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            primary: '#006d77',
+            secondary: '#e29578',
+            lightbg: '#edf6f9',
+            darktext: '#2d3436',
+          },
+          fontFamily: {
+            sans: ['Poppins', 'sans-serif'],
+          }
+        }
+      }
+    }
+  </script>
+
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body class="font-sans text-darktext bg-white antialiased pt-20">
+
+  <header class="fixed w-full top-0 z-50 bg-white/90 backdrop-blur-md border-b border-gray-100 shadow-sm transition-all duration-300">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="flex justify-between items-center h-20">
+        <a href="index.html" class="flex items-center gap-3 group">
+          <div class="w-12 h-12 rounded-full overflow-hidden flex items-center justify-center bg-white border border-gray-100 shadow-sm flex-shrink-0">
+            <img src="images/logo.png" alt="SSG Logo" class="w-full h-full object-cover">
+          </div>
+          <div class="flex flex-col">
+            <span class="font-bold text-lg leading-tight text-primary group-hover:text-secondary transition duration-300">
+              Southpaw Society Ghana
+            </span>
+            <span class="text-[10px] uppercase font-bold tracking-widest text-gray-400">
+              Advocacy & Inclusion
+            </span>
+          </div>
+        </a>
+
+        <nav class="hidden md:flex space-x-8 items-center">
+          <a href="index.html" class="text-gray-600 hover:text-primary transition font-medium">Home</a>
+          <a href="about.html" class="text-gray-600 hover:text-primary transition font-medium">About</a>
+          <a href="publications.html" class="text-primary font-semibold">Publications</a>
+          <a href="media.html" class="text-gray-600 hover:text-secondary transition font-medium">Media</a>
+          <a href="involved.html" class="bg-secondary text-white px-6 py-2.5 rounded-full font-semibold hover:bg-[#d17b5c] transition shadow-md">Donate / Join</a>
+        </nav>
+
+        <button class="md:hidden text-primary text-2xl focus:outline-none" onclick="toggleMenu()">
+          <i class="fa-solid fa-bars"></i>
+        </button>
+      </div>
+    </div>
+
+    <div id="mobileMenu" class="hidden md:hidden bg-white border-t border-gray-100 shadow-lg absolute w-full">
+      <a href="index.html" class="block px-6 py-4 text-gray-600 border-b border-gray-50">Home</a>
+      <a href="about.html" class="block px-6 py-4 text-gray-600 border-b border-gray-50">About Us</a>
+      <a href="publications.html" class="block px-6 py-4 text-primary font-semibold border-b border-gray-50">Publications</a>
+      <a href="media.html" class="block px-6 py-4 text-gray-600 border-b border-gray-50">Media</a>
+      <a href="involved.html" class="block px-6 py-4 text-secondary font-bold">Donate / Volunteer</a>
+    </div>
+  </header>
+
+  <section class="py-16 bg-gradient-to-b from-[#e0f2fe]/50 to-white text-center">
+    <div class="max-w-4xl mx-auto px-4">
+      <h1 class="text-4xl font-extrabold text-primary mb-4">Support Our Cause</h1>
+      <div class="w-16 h-1 bg-secondary mx-auto mb-6 rounded-full"></div>
+      <p class="text-lg text-gray-600 leading-relaxed max-w-2xl mx-auto">
+        Whether you give your resource or volunteer your time, your contribution directly funds school desks, outreach workshops, and parental toolkits across Ghana.
+      </p>
+    </div>
+  </section>
+
+  <!-- UPDATED DONATION SECTION -->
+  <section class="py-12 bg-white">
+    <div class="max-w-2xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="border border-gray-100 bg-lightbg/40 p-8 rounded-2xl flex flex-col justify-between shadow-sm">
+        <div>
+          <div class="flex items-center gap-3 mb-4">
+            <div class="w-10 h-10 bg-white rounded-xl shadow-sm flex items-center justify-center text-secondary text-lg">
+              <i class="fa-solid fa-mobile-screen-button"></i>
+            </div>
+            <h3 class="text-xl font-bold text-primary">Mobile Money (MoMo)</h3>
+          </div>
+          <p class="text-sm text-gray-600 leading-relaxed mb-6">
+            No amount is too small. Every cedi counts toward building an inclusive Ghana for left-handed individuals. Send your offline contribution instantly using our official merchant business shortcode.
+          </p>
+          <div class="bg-white rounded-xl p-5 border border-gray-100 space-y-3 text-sm text-darktext shadow-inner font-medium">
+            <div>
+              <span class="text-gray-400 block text-xs uppercase tracking-wider font-bold mb-0.5">Account Name</span> 
+              <span class="text-primary font-bold">Southpaw Society Ghana</span>
+            </div>
+            <div>
+              <span class="text-gray-400 block text-xs uppercase tracking-wider font-bold mb-0.5">MTN Merchant ID</span> 
+              <span class="text-xl font-extrabold text-darktext tracking-wider">000882</span>
+            </div>
+            <div>
+              <span class="text-gray-400 block text-xs uppercase tracking-wider font-bold mb-0.5">Network Operator</span> 
+              <span class="text-gray-600">MTN Ghana</span>
+            </div>
+          </div>
+        </div>
+        <div class="text-[11px] text-gray-400 font-medium mt-6 flex items-center gap-1.5">
+          <i class="fa-solid fa-circle-info text-primary"></i> Kindly choose "Pay Merchant" on your MoMo menu and use the ID above.
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="py-20 bg-lightbg/40 border-t border-gray-100">
+    <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="grid md:grid-cols-5 gap-12 items-center">
+        
+        <div class="md:col-span-2 text-center md:text-left">
+          <span class="bg-primary/10 text-primary text-xs font-bold uppercase tracking-wider px-3 py-1 rounded-full">
+            Join the Society
+          </span>
+          <h2 class="text-3xl font-bold text-primary mt-3 mb-4 text-center md:text-left after:mx-0 after:content-none">Become an Advocate</h2>
+          <p class="text-sm text-gray-600 leading-relaxed mb-6">
+            We are actively looking for vibrant, passionate individuals to support our structural initiatives in multiple domains.
+          </p>
+          <ul class="space-y-3 text-sm text-gray-700 font-medium text-left">
+            <li class="flex items-center gap-2"><i class="fa-solid fa-circle-check text-secondary"></i> School Workshop Instructors</li>
+            <li class="flex items-center gap-2"><i class="fa-solid fa-circle-check text-secondary"></i> Social Media Content Directors</li>
+            <li class="flex items-center gap-2"><i class="fa-solid fa-circle-check text-secondary"></i> Local Community Liaison Officers</li>
+            <li class="flex items-center gap-2"><i class="fa-solid fa-circle-check text-secondary"></i> Event Logistics Coordinates</li>
+          </ul>
+        </div>
+
+        <div class="md:col-span-3 bg-white p-8 rounded-2xl shadow-md border border-gray-100 text-center">
+          <div class="w-16 h-16 bg-lightbg rounded-full flex items-center justify-center text-primary text-2xl mx-auto mb-4">
+            <i class="fa-solid fa-clipboard-user"></i>
+          </div>
+          <h3 class="text-xl font-bold text-darktext mb-2">Submit Your Application</h3>
+          <p class="text-sm text-gray-500 max-w-sm mx-auto mb-6">
+            Click below to load our official application intake portal and tell us how you'd like to support the cause.
+          </p>
+          <a href="https://forms.gle/SSmkNPqyBv2YmePT7" target="_blank" class="inline-flex items-center justify-center gap-2 w-full bg-primary text-white py-3.5 rounded-xl font-bold hover:bg-[#004d55] transition shadow-md">
+            Open Volunteer Registration Form <i class="fa-solid fa-arrow-up-right-from-square text-xs"></i>
+          </a>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <footer class="bg-[#1a1a1a] text-white pt-16 pb-8 border-t border-gray-900">
+    <div class="max-w-6xl mx-auto px-4 text-center">
+      <h3 class="text-2xl font-bold text-secondary mb-8">Southpaw Society Ghana</h3>
+      
+      <div class="flex justify-center gap-4 mb-10">
+        <a href="https://www.instagram.com/southpawsocietyghana" target="_blank" class="w-12 h-12 rounded-full bg-white/10 flex items-center justify-center text-xl hover:bg-gradient-to-tr hover:from-[#f09433] hover:to-[#bc1888] transition transform hover:-translate-y-1"><i class="fa-brands fa-instagram"></i></a>
+        <a href="https://www.facebook.com/profile.php?id=61571130084951" target="_blank" class="w-12 h-12 rounded-full bg-white/10 flex items-center justify-center text-xl hover:bg-[#1877f2] transition transform hover:-translate-y-1"><i class="fa-brands fa-facebook-f"></i></a>
+        <a href="https://www.linkedin.com/in/southpaw-society-ghana-117325343" target="_blank" class="w-12 h-12 rounded-full bg-white/10 flex items-center justify-center text-xl hover:bg-[#0077b5] transition transform hover:-translate-y-1"><i class="fa-brands fa-linkedin-in"></i></a>
+        <a href="https://www.tiktok.com/@southpaw.society" target="_blank" class="w-12 h-12 rounded-full bg-white/10 flex items-center justify-center text-xl hover:bg-black transition transform hover:-translate-y-1"><i class="fa-brands fa-tiktok"></i></a>
+        <a href="https://api.whatsapp.com/send/?phone=233545809619" target="_blank" class="w-12 h-12 rounded-full bg-white/10 flex items-center justify-center text-xl hover:bg-[#25d366] transition transform hover:-translate-y-1"><i class="fa-brands fa-whatsapp"></i></a>
+      </div>
+
+      <div class="border-t border-gray-800 pt-8 flex flex-col md:flex-row justify-between items-center gap-4">
+        <p class="text-sm text-gray-500">&copy; 2026 Southpaw Society Ghana LBG. All rights reserved.</p>
+        <div class="text-sm text-gray-500 flex gap-4">
+          <a href="mailto:southpawsocietyghana@gmail.com" class="hover:text-secondary transition"><i class="fa-solid fa-envelope mr-1"></i> Email Us</a>
+          <a href="tel:+233545809619" class="hover:text-secondary transition"><i class="fa-solid fa-phone mr-1"></i> Call Us</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script src="js/script.js"></script>
+</body>
+</html>
