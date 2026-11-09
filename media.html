@@ -5,9 +5,12 @@
   <title>Media Center | Southpaw Society Ghana</title>
   <meta name="viewport" content="width=device-width, initial-scale=1">
   
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
   
+  <link rel="preconnect" href="https://cdn.tailwindcss.com">
   <script src="https://cdn.tailwindcss.com"></script>
   <script>
     tailwind.config = {
@@ -77,7 +80,7 @@
         
         <div class="grid lg:grid-cols-3 gap-4">
           <div class="lg:col-span-2 relative bg-black rounded-2xl overflow-hidden aspect-video shadow-inner">
-            <video id="mainPlayer" class="w-full h-full object-cover" controls poster="images/video-poster.jpg">
+            <video id="mainPlayer" class="w-full h-full object-cover" controls preload="none">
               <source src="images/video1.mp4" type="video/mp4">
               Your browser does not support the video tag.
             </video>
@@ -152,7 +155,7 @@
         
         <div class="gallery-item advocacy bg-white rounded-2xl overflow-hidden shadow-sm hover:shadow-xl border border-gray-100 transition duration-300 group">
           <div class="aspect-[4/3] overflow-hidden bg-gray-100">
-            <img src="images/gallery1.jpg" alt="World Lefties Day" class="w-full h-full object-cover group-hover:scale-105 transition duration-700">
+            <img loading="lazy" decoding="async" src="images/gallery1.jpg" alt="World Lefties Day" class="w-full h-full object-cover group-hover:scale-105 transition duration-700">
           </div>
           <div class="p-5">
             <h4 class="font-bold text-gray-900 text-base mb-1">World Lefties Day Event</h4>
@@ -162,7 +165,7 @@
 
         <div class="gallery-item advocacy bg-white rounded-2xl overflow-hidden shadow-sm hover:shadow-xl border border-gray-100 transition duration-300 group">
           <div class="aspect-[4/3] overflow-hidden bg-gray-100">
-            <img src="images/gallery2.jpg" alt="World Lefties Day" class="w-full h-full object-cover group-hover:scale-105 transition duration-700">
+            <img loading="lazy" decoding="async" src="images/gallery2.jpg" alt="World Lefties Day" class="w-full h-full object-cover group-hover:scale-105 transition duration-700">
           </div>
           <div class="p-5">
             <h4 class="font-bold text-gray-900 text-base mb-1">World Lefties Day Event</h4>
@@ -172,7 +175,7 @@
 
         <div class="gallery-item advocacy bg-white rounded-2xl overflow-hidden shadow-sm hover:shadow-xl border border-gray-100 transition duration-300 group">
           <div class="aspect-[4/3] overflow-hidden bg-gray-100">
-            <img src="images/gallery3.jpg" alt="World Lefties Day" class="w-full h-full object-cover group-hover:scale-105 transition duration-700">
+            <img loading="lazy" decoding="async" src="images/gallery3.jpg" alt="World Lefties Day" class="w-full h-full object-cover group-hover:scale-105 transition duration-700">
           </div>
           <div class="p-5">
             <h4 class="font-bold text-gray-900 text-base mb-1">World Lefties Day Event</h4>
@@ -182,7 +185,7 @@
 
         <div class="gallery-item team bg-white rounded-2xl overflow-hidden shadow-sm hover:shadow-xl border border-gray-100 transition duration-300 group">
           <div class="aspect-[4/3] overflow-hidden bg-gray-100">
-            <img src="images/gallery4.jpg" alt="Group Picture" class="w-full h-full object-cover group-hover:scale-105 transition duration-700">
+            <img loading="lazy" decoding="async" src="images/gallery4.jpg" alt="Group Picture" class="w-full h-full object-cover group-hover:scale-105 transition duration-700">
           </div>
           <div class="p-5">
             <h4 class="font-bold text-gray-900 text-base mb-1">Team on World Lefties Day</h4>
@@ -192,7 +195,7 @@
 
         <div class="gallery-item school bg-white rounded-2xl overflow-hidden shadow-sm hover:shadow-xl border border-gray-100 transition duration-300 group">
           <div class="aspect-[4/3] overflow-hidden bg-gray-100">
-            <img src="images/gallery5.jpg" alt="School Awareness" class="w-full h-full object-cover group-hover:scale-105 transition duration-700">
+            <img loading="lazy" decoding="async" src="images/gallery5.jpg" alt="School Awareness" class="w-full h-full object-cover group-hover:scale-105 transition duration-700">
           </div>
           <div class="p-5">
             <h4 class="font-bold text-gray-900 text-base mb-1">Classroom Interaction</h4>
@@ -202,7 +205,7 @@
 
         <div class="gallery-item school bg-white rounded-2xl overflow-hidden shadow-sm hover:shadow-xl border border-gray-100 transition duration-300 group">
           <div class="aspect-[4/3] overflow-hidden bg-gray-100">
-            <img src="images/gallery6.jpg" alt="School Awareness" class="w-full h-full object-cover group-hover:scale-105 transition duration-700">
+            <img loading="lazy" decoding="async" src="images/gallery6.jpg" alt="School Awareness" class="w-full h-full object-cover group-hover:scale-105 transition duration-700">
           </div>
           <div class="p-5">
             <h4 class="font-bold text-gray-900 text-base mb-1">Educating Children</h4>
@@ -212,7 +215,7 @@
 
         <div class="gallery-item school bg-white rounded-2xl overflow-hidden shadow-sm hover:shadow-xl border border-gray-100 transition duration-300 group">
           <div class="aspect-[4/3] overflow-hidden bg-gray-100">
-            <img src="images/gallery7.jpg" alt="School Awareness" class="w-full h-full object-cover group-hover:scale-105 transition duration-700">
+            <img loading="lazy" decoding="async" src="images/gallery7.jpg" alt="School Awareness" class="w-full h-full object-cover group-hover:scale-105 transition duration-700">
           </div>
           <div class="p-5">
             <h4 class="font-bold text-gray-900 text-base mb-1">Student Awareness Drill</h4>
@@ -222,7 +225,7 @@
 
         <div class="gallery-item advocacy bg-white rounded-2xl overflow-hidden shadow-sm hover:shadow-xl border border-gray-100 transition duration-300 group">
           <div class="aspect-[4/3] overflow-hidden bg-gray-100">
-            <img src="images/gallery8.jpg" alt="Community Engagement" class="w-full h-full object-cover group-hover:scale-105 transition duration-700">
+            <img loading="lazy" decoding="async" src="images/gallery8.jpg" alt="Community Engagement" class="w-full h-full object-cover group-hover:scale-105 transition duration-700">
           </div>
           <div class="p-5">
             <h4 class="font-bold text-gray-900 text-base mb-1">Community Engagement</h4>
@@ -232,7 +235,7 @@
 
         <div class="gallery-item advocacy bg-white rounded-2xl overflow-hidden shadow-sm hover:shadow-xl border border-gray-100 transition duration-300 group">
           <div class="aspect-[4/3] overflow-hidden bg-gray-100">
-            <img src="images/gallery9.jpg" alt="Community Engagement" class="w-full h-full object-cover group-hover:scale-105 transition duration-700">
+            <img loading="lazy" decoding="async" src="images/gallery9.jpg" alt="Community Engagement" class="w-full h-full object-cover group-hover:scale-105 transition duration-700">
           </div>
           <div class="p-5">
             <h4 class="font-bold text-gray-900 text-base mb-1">Community Outreach Dialogue</h4>
