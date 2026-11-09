@@ -3,10 +3,25 @@
 // ==========================================
 function toggleMenu() {
   const menu = document.getElementById('mobileMenu');
-  if (menu) {
-    menu.classList.toggle('hidden');
-  }
+  const button = document.querySelector('[aria-controls="mobileMenu"]');
+  if (!menu || !button) return;
+
+  const isOpen = !menu.classList.contains('hidden');
+  menu.classList.toggle('hidden', isOpen);
+  button.setAttribute('aria-expanded', String(!isOpen));
+  button.setAttribute('aria-label', isOpen ? 'Open navigation menu' : 'Close navigation menu');
 }
+
+document.addEventListener('keydown', (event) => {
+  if (event.key !== 'Escape') return;
+  const menu = document.getElementById('mobileMenu');
+  const button = document.querySelector('[aria-controls="mobileMenu"]');
+  if (!menu || menu.classList.contains('hidden')) return;
+  menu.classList.add('hidden');
+  button?.setAttribute('aria-expanded', 'false');
+  button?.setAttribute('aria-label', 'Open navigation menu');
+  button?.focus();
+});
 
 
 // ==========================================
